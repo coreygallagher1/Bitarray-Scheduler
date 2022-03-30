@@ -25,17 +25,14 @@ bit_array createBitArray (int times, int position) {
 // TODO
 bitmap * createBitmap (int times, int id) {
   bitmap bitMap;
+  bitmap * b = (bitmap *) malloc(sizeof(bitmap));
   bitMap.offer_id = id;
   
     for(int i = 0; i < 5; i++){
-      printBinary(createBitArray(times, i));
       bitMap.b[i] = createBitArray(times, i);
-      bitMap.next;
-      
-
     }
-    bitMap.next = &bitMap;
-    return &bitMap;
+    *b = bitMap;
+    return b;
 }
 
 int main () {
