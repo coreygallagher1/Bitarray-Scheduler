@@ -2,4 +2,15 @@ Alice: K-1st, 5
 Bob: PreK, 2
 Clare: K-1st, 3, Alice
 David/Elliot: 2nd, 1, Frank
-Greta: Junior High, 4, Helen/Iain
+Greta: Junior High, 4, Helen
+Jody: K-1st, 2
+Lauren: High School, 3
+Nick/Molly: 5th-6th, 4
+Owen: 2nd, 2
+Patricia: 2nd, 3
+Paul: 5th-6th, 2
+Quince: 2nd, 4
+Quasimodo: High School, 1
+Romilla: Junior High, 1
+Rheingold: Junior High, 4
+Socrates: 3rd-4th, 5
