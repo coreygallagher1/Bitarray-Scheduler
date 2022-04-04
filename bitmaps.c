@@ -38,9 +38,9 @@ bitmap * createBitmap (int times, int id) {
 
 /* TODO: insert n in the beginning of list head */
 bitmap * insertHead (bitmap * head, bitmap * n) {
-  // implement this function and change the following return statement
-  int x;
-  return NULL;
+  head->next = n;
+
+  return head;
 }
 
 int main () {
