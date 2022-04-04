@@ -1,0 +1,5 @@
+Alice: K-1st, 5
+Bob: PreK, 2
+Clare: K-1st, 3, Alice
+David/Elliot: 2nd, 1, Frank
+Greta: Junior High, 4, Helen/Iain
