@@ -2,54 +2,28 @@
 #include <stdlib.h>
 #include <string.h>
 #include "scheduler.h"
+#include "bitmaps.c"
 
-#define L 50 // maximum number of characters in a name
+int gradeIndex(char * s) {
 
-// Do NOT modify
-typedef struct person_struct {
-    char name[L];
-    struct person_struct * next;
-} person;
+  if ( s == NULL ) return -1;
 
-// Do NOT modify
-typedef struct teaching_offer {
-    int id; // unique identifier for offer
-    int times; // times per week of instruction
-    char grade[L]; // grade level
-    person * teacher; // one or more lead teachers
-    person * assistant; // one or more assistants
-    struct teaching_offer * next;
-} offer;
+  if ( strstr("PreK\0", s) != NULL )
+    return 0;
+  if ( strstr("K-1st\0", s) != NULL )
+    return 1;
+  if ( strstr("2nd\0", s) != NULL )
+    return 2;
+  if ( strstr("3rd-4th\0", s) != NULL )
+    return 3;
+  if ( strstr("5th-6th\0", s) != NULL )
+    return 4;
+  if ( strstr("Junior High\0", s) != NULL )
+    return 5;
+  if ( strstr("High School\0", s) != NULL )
+    return 6;
 
-// Do NOT modify
-void printOffer (offer * k) {
-    if (k == NULL)
-        return;
-
-    printf("Offer id: %2d ", k->id);
-
-    printf("Grade: %12s ", k->grade);
-    person * t = k->teacher;
-
-    printf("Teacher(s): ");
-    while (t != NULL) {
-        printf("%10s ", t->name);
-        t = t->next;
-    }
-
-    t = k->assistant;
-    printf("Assistant(s): ");
-    while (t != NULL) {
-        printf("%10s ", t->name);
-        t = t->next;
-    }
-    printf("\n");
-}
-
-char * trimLeadingSpaces(char * s) {
-    char *token = strtok(s, " ");
-
-    return token;
+  return -2;
 }
 
 offer * readOfferLine (char * line, int id) {
@@ -125,22 +99,12 @@ int main () {
 
   offer * temp = c;
   while ( temp != NULL ) {
-    if(strcmp(temp->grade, "PreK")) {
-        p[0][temp->times - 1] = createBitmap(temp->times, temp->id);
-    } else if(strcmp(temp->grade, "K-1st")) {
-        p[1][temp->times - 1] = createBitmap(temp->times, temp->id);
-    } else if(strcmp(temp->grade, "2nd")) {
-        p[2][temp->times - 1] = createBitmap(temp->times, temp->id);
-    } else if(strcmp(temp->grade, "3rd-4th")) {
-        p[3][temp->times - 1] = createBitmap(temp->times, temp->id);
-    } else if(strcmp(temp->grade, "5th-6th")) {
-        p[4][temp->times - 1] = createBitmap(temp->times, temp->id);
-    } else if(strcmp(temp->grade, "Junior High")) {
-        p[5][temp->times - 1] = createBitmap(temp->times, temp->id);
-    } else if(strcmp(temp->grade, "High School")) {
-        p[6][temp->times - 1] = createBitmap(temp->times, temp->id);
-    }
-    printOffer(temp);
+    //p[gradeIndex(temp->grade)][temp->times - 1] = createBitmap(temp->times, temp->id);
+
+    //printOffer(temp);
     temp = temp->next;
   }
+    p[0][0] = createBitmap(1,1);
+    p[0][1] = createBitmap(2,2);
+    printTable(p);
 }

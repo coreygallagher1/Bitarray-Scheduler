@@ -43,18 +43,3 @@ bitmap * insertHead (bitmap * head, bitmap * n) {
   return head;
 }
 
-int main () {
-  bitmap * m = createBitmap(1, 0);
-
-  printBitmap(m);
-  m = createBitmap(2, 1);
-  printBitmap(m);
-  m = createBitmap(3, 2);
-  printBitmap(m);
-  m = createBitmap(4, 3);
-  printBitmap(m);
-  m = createBitmap(5, 4);
-  printBitmap(m);
-
-  free(m);
-}
