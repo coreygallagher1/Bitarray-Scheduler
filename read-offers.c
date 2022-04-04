@@ -126,19 +126,19 @@ int main () {
   offer * temp = c;
   while ( temp != NULL ) {
     if(strcmp(temp->grade, "PreK")) {
-        //p[0][temp->times - 1]
+        p[0][temp->times - 1] = createBitmap(temp->times, temp->id);
     } else if(strcmp(temp->grade, "K-1st")) {
-        //p[1][temp->times - 1]
+        p[1][temp->times - 1] = createBitmap(temp->times, temp->id);
     } else if(strcmp(temp->grade, "2nd")) {
-        //p[2][temp->times - 1]
+        p[2][temp->times - 1] = createBitmap(temp->times, temp->id);
     } else if(strcmp(temp->grade, "3rd-4th")) {
-        //p[3][temp->times - 1]
+        p[3][temp->times - 1] = createBitmap(temp->times, temp->id);
     } else if(strcmp(temp->grade, "5th-6th")) {
-        //p[4][temp->times - 1]
+        p[4][temp->times - 1] = createBitmap(temp->times, temp->id);
     } else if(strcmp(temp->grade, "Junior High")) {
-        //p[5][temp->times - 1]
+        p[5][temp->times - 1] = createBitmap(temp->times, temp->id);
     } else if(strcmp(temp->grade, "High School")) {
-        //p[6][temp->times - 1]
+        p[6][temp->times - 1] = createBitmap(temp->times, temp->id);
     }
     printOffer(temp);
     temp = temp->next;
