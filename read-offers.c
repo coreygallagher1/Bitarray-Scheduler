@@ -2,25 +2,25 @@
 #include <stdlib.h>
 #include <string.h>
 #include "scheduler.h"
-#include "bitmaps.c"
+//#include "bitmaps.c"
 
 int gradeIndex(char * s) {
 
   if ( s == NULL ) return -1;
 
-  if ( strstr("PreK\0", s) != NULL )
+  if ( strstr(" PreK\0", s) != NULL )
     return 0;
-  if ( strstr("K-1st\0", s) != NULL )
+  if ( strstr(" K-1st\0", s) != NULL )
     return 1;
-  if ( strstr("2nd\0", s) != NULL )
+  if ( strstr(" 2nd\0", s) != NULL )
     return 2;
-  if ( strstr("3rd-4th\0", s) != NULL )
+  if ( strstr(" 3rd-4th\0", s) != NULL )
     return 3;
-  if ( strstr("5th-6th\0", s) != NULL )
+  if ( strstr(" 5th-6th\0", s) != NULL )
     return 4;
-  if ( strstr("Junior High\0", s) != NULL )
+  if ( strstr(" Junior High\0", s) != NULL )
     return 5;
-  if ( strstr("High School\0", s) != NULL )
+  if ( strstr(" High School\0", s) != NULL )
     return 6;
 
   return -2;
@@ -92,19 +92,19 @@ offer * readOffers (char * filename) {
   return offer_head;
 }
 
-int main () {
+// int main () {
 
-  offer * c = readOffers("teacher-offers.txt");
-  // sample file, your tests could include different ones
+//   offer * c = readOffers("teacher-offers.txt");
+//   // sample file, your tests could include different ones
 
-  offer * temp = c;
-  while ( temp != NULL ) {
-    //p[gradeIndex(temp->grade)][temp->times - 1] = createBitmap(temp->times, temp->id);
+//   offer * temp = c;
+//   while ( temp != NULL ) {
+//     //p[gradeIndex(temp->grade)][temp->times - 1] = createBitmap(temp->times, temp->id);
 
-    //printOffer(temp);
-    temp = temp->next;
-  }
-    p[0][0] = createBitmap(1,1);
-    p[0][1] = createBitmap(2,2);
-    printTable(p);
-}
+//     //printOffer(temp);
+//     temp = temp->next;
+//   }
+//     p[0][0] = createBitmap(1,1);
+//     p[0][1] = createBitmap(2,2);
+//     printTable(p);
+// }

@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "scheduler.h"
+#include "bitmaps.c"
+#include "read-offers.c"
+#include "print-utils.c"
+#include "scheduler.c"
+
 
 int main (int argc, char * argv[]) {
 
@@ -12,6 +17,12 @@ int main (int argc, char * argv[]) {
 
   offer * temp = c;
   while ( temp != NULL ) {
+    if(p[gradeIndex(temp->grade)][temp->times - 1] == NULL) {
+      p[gradeIndex(temp->grade)][temp->times - 1] = createBitmap(temp->times, temp->id);
+    } else {
+      p[gradeIndex(temp->grade)][temp->times - 1] = insertHead(createBitmap(temp->times, temp->id), p[gradeIndex(temp->grade)][temp->times - 1]);
+    }
+
     printOffer(temp);
     temp = temp->next;
   }

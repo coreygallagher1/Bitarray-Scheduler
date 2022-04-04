@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 //#include "scheduler.h"
-#include "print-utils.c"
+//#include "print-utils.c"
 
 // TODO
 bit_array createBitArray (int times, int position) {
@@ -38,7 +38,15 @@ bitmap * createBitmap (int times, int id) {
 
 /* TODO: insert n in the beginning of list head */
 bitmap * insertHead (bitmap * head, bitmap * n) {
-  head->next = n;
+  if(head == NULL) {
+    return n;
+  } 
+  if(n == NULL) {
+    return head;
+  }
+
+  n->next = head;
+  head = n;
 
   return head;
 }
