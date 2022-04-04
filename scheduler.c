@@ -6,6 +6,19 @@
 
 // TODO
 option * optionsForGrade (bitmap * g[D]) {
+  option *new_option = malloc(sizeof(option));
+
+  for(int i = 0; i < sizeof(g); i++) {
+    for(int j = 0; j < sizeof(g); j++) {
+      if(g[j]->b == 31) {
+        new_option->offer_id[0] = g[j]->offer_id;
+        new_option->a[0] = g[j]->b;
+      }
+      if(i != j && g[i]->b + g[j]->b == 31){
+
+      }
+    }
+  }
   // implement this function and change the following return statement
   return NULL;
 }
