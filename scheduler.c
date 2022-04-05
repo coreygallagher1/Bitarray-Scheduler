@@ -138,13 +138,12 @@ option * optionsForGrade (bitmap * g[D]) {
     head = new_option2;
   }
 
-  if(head == NULL) {
-    head->offer_id[0] = INVALID_OFFER_ID;
-    head->a[0] = INVALID_BIT_ARRAY;
+  if(head->a[0] == NULL) {
+    return NULL;
   } else {
       /*option *temp = head;
       while(temp != NULL) {
-        if(temp->next == NULL) {
+        if(temp->next->a[0] == NULL) {
           option *invalid = malloc(sizeof(option));
           invalid->offer_id[0] = INVALID_OFFER_ID;
           invalid->a[0] = INVALID_BIT_ARRAY;
