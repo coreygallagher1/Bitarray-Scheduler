@@ -79,13 +79,14 @@ option * optionsForGrade (bitmap * g[D]) {
     new_option->offer_id[1] = g[3]->offer_id;
     new_option->a[0] = g[0]->b[0];
     new_option->a[1] = g[3]->b[1];
+  }
 
-    if(head == NULL) {
-      head = new_option;
-    } else {
-      new_option->next = head;
-      head = new_option;
-    }
+  //Adding element to linked list
+  if(head == NULL && new_option != NULL) {
+    head = new_option;
+  } else {
+    new_option->next = head;
+    head = new_option;
   }
 
   return head;
