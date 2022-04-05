@@ -120,7 +120,7 @@ option * optionsForGrade (bitmap * g[D]) {
     new_option1->offer_id[0] = g[1]->offer_id;
     new_option1->offer_id[1] = g[2]->offer_id;
     new_option1->a[0] = g[1]->b[0];
-    new_option1->a[1] = g[2]->b[3];
+    new_option1->a[1] = g[2]->b[2];
 
     if(head == NULL) {
       head = new_option1;
@@ -131,7 +131,7 @@ option * optionsForGrade (bitmap * g[D]) {
 
     new_option2->offer_id[0] = g[1]->offer_id;
     new_option2->offer_id[1] = g[2]->offer_id;
-    new_option2->a[0] = g[1]->b[2];
+    new_option2->a[0] = g[1]->b[3];
     new_option2->a[1] = g[2]->b[0];
 
     new_option2->next = head;
