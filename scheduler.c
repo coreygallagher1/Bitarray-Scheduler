@@ -110,6 +110,31 @@ option * optionsForGrade (bitmap * g[D]) {
     head = new_option2;
   }
 
+  if(g[1] != NULL && g[2] != NULL) {
+    option *new_option1 = malloc(sizeof(option));
+    option *new_option2 = malloc(sizeof(option));
+
+    new_option1->offer_id[0] = g[1]->offer_id;
+    new_option1->offer_id[1] = g[2]->offer_id;
+    new_option1->a[0] = g[1]->b[0];
+    new_option1->a[1] = g[2]->b[3];
+
+    if(head == NULL) {
+      head = new_option1;
+    } else {
+      new_option1->next = head;
+      head = new_option1;
+    }
+
+    new_option2->offer_id[0] = g[1]->offer_id;
+    new_option2->offer_id[1] = g[2]->offer_id;
+    new_option2->a[0] = g[1]->b[2];
+    new_option2->a[1] = g[2]->b[0];
+
+    new_option2->next = head;
+    head = new_option2;
+  }
+
   return head;
 }
 
