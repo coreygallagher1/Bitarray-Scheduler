@@ -34,5 +34,7 @@ int main (int argc, char * argv[]) {
   printTable(p);
   printf("\n");
   createSchedule();
+  // REMOVE THIS PRINT
+  printf("PRINTING SCHEDULE\n");
   printSchedule();
 }
