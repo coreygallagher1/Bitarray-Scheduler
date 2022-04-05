@@ -110,6 +110,8 @@ option * optionsForGrade (bitmap * g[D]) {
 
     new_option2->next = head;
     head = new_option2;
+
+    if(g[1] == NULL || g[2] == NULL) head->next->next = NULL;
   }
 
   //Matching Days 2 & 3
@@ -136,6 +138,8 @@ option * optionsForGrade (bitmap * g[D]) {
 
     new_option2->next = head;
     head = new_option2;
+
+    head->next->next = NULL;
   }
 
   if(head->a[0] == NULL) {
