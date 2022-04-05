@@ -17,6 +17,7 @@ int main (int argc, char * argv[]) {
 
   offer * temp = c;
   while ( temp != NULL ) {
+    //Test
     if(p[gradeIndex(temp->grade)][temp->times - 1] == NULL) {
       p[gradeIndex(temp->grade)][temp->times - 1] = createBitmap(temp->times, temp->id);
     } else {
