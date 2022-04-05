@@ -77,7 +77,8 @@ option * optionsForGradeOLD (bitmap * g[D]) {
 
 option * optionsForGrade (bitmap * g[D]) {
   option *head = malloc(sizeof(option));
-
+  
+  //Teachers who teach all 5 days
   if(g[4] != NULL) {
     head->offer_id[0] = g[4]->offer_id;
     head->offer_id[1] = INVALID_OFFER_ID;
@@ -85,6 +86,7 @@ option * optionsForGrade (bitmap * g[D]) {
     head->a[1] = INVALID_BIT_ARRAY;
   }
 
+  //Matching Days 1 & 4
   if(g[0] != NULL && g[3] != NULL) {
     option *new_option1 = malloc(sizeof(option));
     option *new_option2 = malloc(sizeof(option));
@@ -110,6 +112,7 @@ option * optionsForGrade (bitmap * g[D]) {
     head = new_option2;
   }
 
+  //Matching Days 2 & 3
   if(g[1] != NULL && g[2] != NULL) {
     option *new_option1 = malloc(sizeof(option));
     option *new_option2 = malloc(sizeof(option));
