@@ -70,7 +70,9 @@ option * optionsForGrade (bitmap * g[D]) {
 
   if(g[4] != NULL) {
     head->offer_id[0] = g[4]->offer_id;
+    head->offer_id[1] = INVALID_OFFER_ID;
     head->a[0] = g[4]->b[0];
+    head->a[1] = INVALID_BIT_ARRAY;
   }
   if(g[0] != NULL && g[3] != NULL) {
     new_option->offer_id[0] = g[0]->offer_id;
