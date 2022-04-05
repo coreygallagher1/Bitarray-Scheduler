@@ -32,6 +32,7 @@ bitmap * createBitmap (int times, int id) {
       bitMap.b[i] = createBitArray(times, i);
     }
     *b = bitMap;
+    b->next = NULL;
     return b;
 }
 
