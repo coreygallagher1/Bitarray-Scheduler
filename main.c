@@ -1,11 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "scheduler.h"
-#include "bitmaps.c"
-#include "read-offers.c"
-#include "print-utils.c"
-#include "scheduler.c"
-
 
 int main (int argc, char * argv[]) {
 
