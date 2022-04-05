@@ -64,9 +64,19 @@ option * optionsForGradeOLD (bitmap * g[D]) {
   return NULL;
 }
 
+/*option * insertOptionHead (option * head, option * n) {
+  if(head != NULL) {
+    n->next = head;
+    head = n;
+  } else {
+    return n;
+  }
+
+  return head;
+}*/
+
 option * optionsForGrade (bitmap * g[D]) {
   option *head = malloc(sizeof(option));
-  option *new_option = malloc(sizeof(option));
 
   if(g[4] != NULL) {
     head->offer_id[0] = g[4]->offer_id;
@@ -74,19 +84,30 @@ option * optionsForGrade (bitmap * g[D]) {
     head->a[0] = g[4]->b[0];
     head->a[1] = INVALID_BIT_ARRAY;
   }
-  if(g[0] != NULL && g[3] != NULL) {
-    new_option->offer_id[0] = g[0]->offer_id;
-    new_option->offer_id[1] = g[3]->offer_id;
-    new_option->a[0] = g[0]->b[0];
-    new_option->a[1] = g[3]->b[1];
-  }
 
-  //Adding element to linked list
-  if(head == NULL && new_option != NULL) {
-    head = new_option;
-  } else {
-    new_option->next = head;
-    head = new_option;
+  if(g[0] != NULL && g[3] != NULL) {
+    option *new_option1 = malloc(sizeof(option));
+    option *new_option2 = malloc(sizeof(option));
+
+    new_option1->offer_id[0] = g[0]->offer_id;
+    new_option1->offer_id[1] = g[3]->offer_id;
+    new_option1->a[0] = g[0]->b[0];
+    new_option1->a[1] = g[3]->b[1];
+
+    if(head == NULL) {
+      head = new_option1;
+    } else {
+      new_option1->next = head;
+      head = new_option1;
+    }
+
+    new_option2->offer_id[0] = g[0]->offer_id;
+    new_option2->offer_id[1] = g[3]->offer_id;
+    new_option2->a[0] = g[0]->b[4];
+    new_option2->a[1] = g[3]->b[0];
+
+    new_option2->next = head;
+    head = new_option2;
   }
 
   return head;
