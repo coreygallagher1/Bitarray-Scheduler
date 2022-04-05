@@ -8,14 +8,18 @@
 option * optionsForGrade (bitmap * g[D]) {
   option *new_option = malloc(sizeof(option));
 
-  for(int i = 0; i < sizeof(g); i++) {
-    for(int j = 0; j < sizeof(g); j++) {
-      if(g[j]->b == 31) {
+  for(int i = 0; i < 5; i++) {
+    for(int j = 0; j < 5; j++) {
+      if(*g[j]->b == 31) {
         new_option->offer_id[0] = g[j]->offer_id;
-        new_option->a[0] = g[j]->b;
+        new_option->a[0] = *g[j]->b;
       }
-      if(i != j && g[i]->b + g[j]->b == 31){
-
+      if(i != j){
+        int x = *g[i]->b;
+        int y = *g[j]->b;
+        if(x + y == 31) {
+          
+        }
       }
     }
   }

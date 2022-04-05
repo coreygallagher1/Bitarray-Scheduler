@@ -27,7 +27,7 @@ int gradeIndex(char * s) {
 }
 
 offer * readOfferLine (char * line, int id) {
-    char *token1, *token2, *token3;
+    char *token1, *token2;
 
     offer *new_offer = malloc(sizeof(offer));
     person *person_head = malloc(sizeof(person));
