@@ -59,6 +59,7 @@ bitmap * insertHead (bitmap * head, bitmap * n);
 
 //defined in read-offers.c:
 offer * readOffers (char * filename);
+int gradeIndex(char * s);
 
 //defined in scheduler.c:
 option * optionsForGrade (bitmap * g[D]);

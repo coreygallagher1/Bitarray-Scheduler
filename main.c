@@ -17,11 +17,14 @@ int main (int argc, char * argv[]) {
 
   offer * temp = c;
   while ( temp != NULL ) {
-    //Test
-    if(p[gradeIndex(temp->grade)][temp->times - 1] == NULL) {
-      p[gradeIndex(temp->grade)][temp->times - 1] = createBitmap(temp->times, temp->id);
+    int i = gradeIndex(temp->grade);
+    int j = temp->times - 1;
+    bitmap * m = createBitmap(temp->times, temp->id);
+
+    if(p[i][j] == NULL) {
+      p[i][j] = m;
     } else {
-      p[gradeIndex(temp->grade)][temp->times - 1] = insertHead(createBitmap(temp->times, temp->id), p[gradeIndex(temp->grade)][temp->times - 1]);
+      p[i][j] = insertHead(m, p[i][j]);
     }
 
     printOffer(temp);
