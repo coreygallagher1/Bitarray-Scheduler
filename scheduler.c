@@ -7,7 +7,7 @@
 // TODO
 option * optionsForGrade (bitmap * g[D]) {
   option *new_option = malloc(sizeof(option));
-//test
+
   for(int i = 0; i < 5; i++) {
     for(int j = 0; j < 5; j++) {
       /*if(*g[j]->b == MASK) {
